@@ -61,16 +61,17 @@ This is a built-in sanity check on the computation.
 ## 📂 File Structure
 
 ```
-project_1/
-├── src/
-│   └── project1_gps_satellite_xyz_positions.py   	← Main python
-├── output/                                   		← Generated plots
+gnss-satellite-position-computation/
+│
+├── output/                                   		 ← Generated plots
 │   ├── plot1_3d_orbits.png
 │   ├── plot2_xyz_timeseries.png
 │   └── plot3_orbital_radius.png
-├── requirements.txt
+├── src/
+│   └── project1_gps_satellite_xyz_positions.py   	← Main python
 ├── LICENSE
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
