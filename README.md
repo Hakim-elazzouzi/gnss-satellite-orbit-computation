@@ -7,7 +7,7 @@
 ## 📌 Overview
 
 A GPS receiver cannot know where the satellites are without computing their positions
-from the **broadcast ephemeris** — the orbital parameters each satellite transmits
+from the **broadcast ephemeris**, the orbital parameters each satellite transmits
 in its navigation message. This project implements the complete position computation
 algorithm from scratch, producing ECEF X, Y, Z coordinates for all 32 GPS satellites
 every 15 minutes over a full day.
