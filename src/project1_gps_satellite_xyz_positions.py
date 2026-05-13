@@ -97,10 +97,6 @@ Where:
 # Step7: Plot 2: XYZ Time Series
 # Step8: Plot 3: Orbital Radius Verification
 =============================================================================
-"""
-
-pip install --upgrade georinex
-"""
 # ───────────────────────────────────
 # Step 1 — Install & Import Libraries
 # ───────────────────────────────────
