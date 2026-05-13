@@ -89,12 +89,13 @@ Where:
  **About the projects**
  ----------------------
 # Step1: Install & Import Libraries
-# Step2: Load the RINEX File
-# Step3: Compute Quality Metrics for Every Satellite
-# Step4: Plot 1: Coverage & SNR Dashboard
-# Step5: Plot 2: Data Gap Map
-# Step6: Plot 3: Quality Score Summary Scatter
-# Step7: Generate the Text Quality Report
+# Step2: Load the Navigation File
+# Step3: The GPS Orbit Computation Function
+# Step4: Helper: Find the Best Ephemeris for a Given Time
+# Step5: Compute Positions for All GPS Satellites Over 24 Hours
+# Step6: Plot 1: 3D GPS Constellation Orbits
+# Step7: Plot 2: XYZ Time Series
+# Step8: Plot 3: Orbital Radius Verification
 =============================================================================
 """
 
