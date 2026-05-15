@@ -1,12 +1,6 @@
 =============================================================================
-🛰️ Project 1 — GPS Satellite XYZ Positions
+Project 1 — GPS Satellite XYZ Positions
 =============================================================================
- Author   : Hakim El Azzouzi
- Degree   : MSc Global Navigation Satellite Systems
-            Mohammed First University, Oujda, Morocco
- Email    : elazzouzihakim10@gmail.com
- LinkedIn : https://linkedin.com/in/Hakim-El-Azzouzi
- Location : Luxembourg 🇱🇺
 -----------------------------------------------------------------------------
  File type    : RINEX 2 GPS Navigation
  Date         : 2026-01-01 (Day of Year 001)
@@ -30,12 +24,12 @@ ECEF is a coordinate system fixed to the Earth:
 
 | Plot | What It Shows |
 |------|---------------|
-| 🌍 **3D orbit** | All GPS satellites drawn as curves around a wireframe Earth |
-| 📈 **XYZ time series** | How X, Y, Z coordinates evolve over 24 hours |
-| 📊 **Orbital radius** | Distance from Earth's centre — should be ~26,560 km for GPS |
+| **3D orbit** | All GPS satellites drawn as curves around a wireframe Earth |
+| **XYZ time series** | How X, Y, Z coordinates evolve over 24 hours |
+| **Orbital radius** | Distance from Earth's centre — should be ~26,560 km for GPS |
 
 ---
-## 📐 The GPS Orbit Algorithm (ICD-GPS-200)
+## The GPS Orbit Algorithm (ICD-GPS-200)
 
 Each satellite broadcasts **16 Keplerian parameters** in its navigation message.
 The GPS Interface Control Document (ICD-GPS-200) defines the exact algorithm to convert these into XYZ:
@@ -100,7 +94,6 @@ Where:
 # ───────────────────────────────────
 # Step 1 — Install & Import Libraries
 # ───────────────────────────────────
-# Uncomment if running for the first time:
 # !pip install --upgrade georinex numpy matplotlib
 
 import georinex as gr
@@ -137,7 +130,7 @@ nav_path = "/brdc0010.26n"
 
 # Load the navigation file
 # georinex returns an xarray Dataset with all ephemeris parameters
-print("⏳ Loading navigation file...")
+print("Loading navigation file...")
 nav = gr.load(nav_path)
 print("✅ Navigation file loaded!")
 print()
@@ -148,10 +141,10 @@ print()
 all_sv = nav.sv.values
 gps_sats = sorted([s for s in all_sv if s.startswith('G')])
 
-print(f"📡 GPS satellites in file  : {len(gps_sats)}")
+print(f"GPS satellites in file  : {len(gps_sats)}")
 print(f"   {' '.join(gps_sats)}")
 print()
-print(f"📋 Ephemeris parameters available:")
+print(f"Ephemeris parameters available:")
 for var in nav.data_vars:
     print(f"   {var}")
 
@@ -353,7 +346,7 @@ print()
 
 positions = {}   # sat → {'X': array, 'Y': array, 'Z': array, 'R': array}
 
-print('⏳ Computing satellite positions...')
+print('Computing satellite positions...')
 print()
 
 for sat in gps_sats:
@@ -467,7 +460,7 @@ plt.show()
 
 print('✅ Saved: output/plot1_3d_orbits.png')
 print()
-print('💡 Interpretation:')
+print('Interpretation:')
 print('   • All GPS satellites orbit in 6 orbital planes (55° inclination)')
 print('   • Each orbit takes ~11h 58m (half a sidereal day)')
 print(f'   • Mean orbital radius: {r_orbit:.1f} Mm = {r_orbit*1000:.0f} km  (expected ~26,560 km)')
@@ -529,7 +522,7 @@ plt.show()
 
 print('✅ Saved: output/plot2_xyz_timeseries.png')
 print()
-print('💡 Interpretation:')
+print('Interpretation:')
 print('   • X and Y oscillate with ~12h period (orbital period in the rotating ECEF frame)')
 print('   • Z oscillates because the orbit is inclined at ~55° to the equator')
 print('   • Z = 0 when the satellite is crossing the equatorial plane')
@@ -622,7 +615,7 @@ plt.show()
 
 print('✅ Saved: output/plot3_orbital_radius.png')
 print()
-print('📊 Orbital radius summary:')
+print('Orbital radius summary:')
 print(f"   {'Satellite':<8} {'Mean [km]':>10} {'Std [km]':>10} {'Min [km]':>10} {'Max [km]':>10}")
 print("   " + "-" * 50)
 for sat in sat_list:
@@ -630,6 +623,6 @@ for sat in sat_list:
     print(f"   {sat:<8} {np.nanmean(R):>10.2f} {np.nanstd(R):>10.2f} "
           f"{np.nanmin(R):>10.2f} {np.nanmax(R):>10.2f}")
 print()
-print('💡 The small variation (~10–30 km) is due to orbital eccentricity (e ≈ 0.01)')
+print('The small variation (~10–30 km) is due to orbital eccentricity (e ≈ 0.01)')
 print('   GPS orbits are not perfectly circular — they are slightly elliptical.')
 
