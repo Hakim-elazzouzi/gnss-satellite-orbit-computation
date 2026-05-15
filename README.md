@@ -1,10 +1,10 @@
-# 🛰️ Project 1 — GPS Satellite XYZ Positions
+# Project 1 — GPS Satellite XYZ Positions
 
 > **ICD-GPS-200 Algorithm · ECEF Coordinates · 3D Orbit Visualisation · Orbital Radius | 2026-01-01**
 
 ---
 
-## 📌 Overview
+## Overview
 
 A GPS receiver cannot know where the satellites are without computing their positions
 from the **broadcast ephemeris**, the orbital parameters each satellite transmits
@@ -14,7 +14,7 @@ every 15 minutes over a full day.
 
 ---
 
-## 📐 The Algorithm — ICD-GPS-200
+## The Algorithm — ICD-GPS-200
 
 The GPS Interface Control Document defines a 9-step procedure:
 
@@ -41,7 +41,7 @@ i  ≈ 55°                        GPS orbital inclination
 
 ---
 
-## 🖼️ Output Plots
+## Output Plots
 
 ### Plot 1 — 3D GPS Constellation
 All 32 GPS satellites drawn as coloured orbit curves around a wireframe Earth.
@@ -58,7 +58,7 @@ This is a built-in sanity check on the computation.
 
 ---
 
-## 📂 File Structure
+## File Structure
 
 ```
 gnss-satellite-position-computation/
@@ -76,7 +76,7 @@ gnss-satellite-position-computation/
 
 ---
 
-## ⚙️ How to Run
+## How to Run
 
 ### 1. Install dependencies
 ```bash
@@ -96,7 +96,7 @@ jupyter notebook src/project1_satellite_positions.ipynb
 
 ---
 
-## 🛠️ Dependencies
+## Dependencies
 
 | Package | Purpose |
 |---------|---------|
@@ -107,7 +107,7 @@ jupyter notebook src/project1_satellite_positions.ipynb
 
 ---
 
-## 📡 Navigation File
+## Navigation File
 
 ```
 brdc0010.26n   — RINEX 2 GPS Navigation
@@ -122,7 +122,7 @@ The file contains one record per satellite per 2-hour validity window.
 
 ---
 
-## 👤 Author
+## Author
 
 **Hakim El Azzouzi**
 MSc Global Navigation Satellite Systems
@@ -133,13 +133,13 @@ Mohammed First University, Oujda, Morocco
 
 ---
 
-## 📜 License
+## License
 
 MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-## 🔗 GNSS Navigation RINEX Series
+## GNSS Navigation RINEX Series
 
 | # | Project |
 |---|---------|
